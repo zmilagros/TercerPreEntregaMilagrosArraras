@@ -1,0 +1,52 @@
+{% extends "TIENDA/herencia.html" %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Bienvenidos a la página de productos</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Productos</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit" value="Agregar">
+
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripcion</th>
+            <th>Talle</th>
+            <th>Precio</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        {% for producto in productos %}
+        <tr>
+            <td>
+                {{ producto.id }}
+            </td>
+            <td>
+                {{ producto.descripcion }}
+            </td>
+            <td>
+                {{ producto.talle }}
+            </td>
+            <td>
+                {{ producto.precio }}
+            </td>
+            
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
