@@ -6,6 +6,8 @@ from django.http import HttpResponse, HttpRequest
 def inicio(request):
     return HttpResponse('¡Bienvenido a nuestra tienda!')
 
+def inicioTienda(request):
+    return render(request, "TIENDA/inicio.html")
 
 def clientes(request):
     if request.method == "POST":
