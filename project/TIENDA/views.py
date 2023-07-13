@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from .models import Cliente, Producto, Categoria
 from django.http import HttpResponse, HttpRequest
+from .forms import ProductoForm, ClienteForm
 
-
-def inicio(request):
-    return HttpResponse('¡Bienvenido a nuestra tienda!')
 
 def inicioTienda(request):
     return render(request, "TIENDA/inicio.html")
