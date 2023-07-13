@@ -12,21 +12,22 @@ class Cliente(models.Model):
 
     
 class Producto(models.Model):
-    descripción=models.CharField(max_length=50)
+    descripcion=models.CharField(max_length=50)
     talle=models.CharField(max_length=50, default="")
     precio=models.FloatField()
 
     def __str__(self):
-        return f"Descripción: {self.descripción} - Talle: {self.talle} - Precio: {self.precio}"
+        return f" Descripción: {self.descripcion} - Talle: {self.talle} - Precio: {self.precio}"
     
+
 
 class Categoria(models.Model):
     CATEGORIAS = [
-        ('parte-superior', 'Tops y Remeras'),
-        ('parte-inferior', 'Faldas y Pantalones'),
-        ('cuerpo-entero', 'Vestidos y Enterizos'),
-        ('segunda-piel', 'Abrigos y Buzos'),
-        ('ropa-interior', 'Ropa Interior')
+        ('partesuperior', 'Tops y Remeras'),
+        ('parteinferior', 'Pantalones y Faldas'),
+        ('cuerpoentero', 'Vestidos y Enterizos'),
+        ('segundapiel', 'Abrigos y Buzos'),
+        ('ropainterior', 'Ropa Interior')
     ]
 
     nombre = models.CharField(max_length=50, choices=CATEGORIAS)

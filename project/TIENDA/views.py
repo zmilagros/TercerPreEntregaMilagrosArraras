@@ -5,7 +5,7 @@ from .forms import ProductoForm, ClienteForm
 
 
 def inicioTienda(request):
-    return render(request, "TIENDA/inicio.html")
+    return render(request, "TIENDA/index.html")
 
 def clientes(request):
     if request.method == "POST":
@@ -23,7 +23,7 @@ def clientes(request):
 
     clientes = Cliente.objects.all()
     context={"clientes":clientes, "form":form}
-    return render(request, "TIENDA/clientes.html",context)
+    return render(request, "TIENDA/about.html",context)
 
 def productos(request):
     if request.method == "POST":
@@ -41,10 +41,16 @@ def productos(request):
 
     productos = Producto.objects.all()
     context={"productos":productos, "form":form}
-    return render(request, "TIENDA/productos.html",context)
+    return render(request, "TIENDA/products.html",context)
+
 
 def categorias(request):
     categorias = Categoria.objects.all()
-    return render(request, 'categorias.html', {'categorias': categorias})
+    print("Categorías:", categorias)
+    return render(request, "TIENDA/store.html", {'categorias': categorias})
+
+
+
+
 
 
