@@ -32,18 +32,26 @@
                             <span class="section-heading-upper">Estas son</span>
                             <span class="section-heading-lower">nuestras prendas</span>
                         </h2>
-                        <h1>Categorias:</h1>
-                        <table>
-                            <tbody>
-                                {% for categoria in categorias %}
+                        <h1>Categorias</h1>
+
+                        <div style="width: 100%; margin: 0 auto;">
+                            <table>
+                              {% for fila in categorias_filas %}
                                 <tr>
-                                    <td>{{ categoria.nombre }}</td>
+                                  {% for categoria in fila %}
+                                    <td style="padding: 10px; text-align: center;">{{ categoria.0 }}</td>
+                                  {% endfor %}
                                 </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                        
-                        <p class="address mb-5">
+                                <tr>
+                                  {% for categoria in fila %}
+                                    <td style="padding: 10px; text-align: center;">{{ categoria.1 }}</td>
+                                  {% endfor %}
+                                </tr>
+                              {% endfor %}
+                            </table>
+                        </div>
+                    
+                        <p class="instagram address mb-5">
                             <em>
                                 <strong> @athenia_cba </strong>
                                 <br>
@@ -71,7 +79,7 @@
                                 <span class="section-heading-upper">Hola Gabriel!</span>
                                 <span class="section-heading-lower">soy Milagros</span>
                             </h2>
-                            <p>No pude resolver que se vieran la lista completa, solo se ven las categorias pero sin sus secciones ejemplo; parte superior tiene remeras y tops, segunda piel tiene abrigos y buzos, etc.</p>
+                            <p>Bueno esto es lo que pude hacer de momento, espero que te guste! jaja.</p>
                             <p class="mb-0">
                             
                             </p>
@@ -90,3 +98,4 @@
     <script src="{% static 'TIENDA/js/scripts.js' %}"></script>
 </body>
 </html>
+
