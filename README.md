@@ -3,12 +3,15 @@
 ## PROYECTO: ONLINE CLOTHING STORE ## :shopping:
 
 ### INDICE ###
+-Notas
 -Enlace página
 -Acceder al admin
 -Autor
 -Sobre el proyecto
 -Flujo
--Expansiones
+
+### NOTAS ###
+Utilizar la rama main
 
 ### ENLACE PÁGINA ###
 
