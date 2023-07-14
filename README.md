@@ -2,7 +2,7 @@
 
 ## PROYECTO: ONLINE CLOTHING STORE :shopping:
 
-simp("bt.rojo")### INDICE ###
+### INDICE ###
 
 -Notas
 -Enlace página
