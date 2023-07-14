@@ -22,9 +22,13 @@ Utilizar la rama main
 ### ENLACE PÁGINA ###
 
 (http://127.0.0.1:8000/admin/)
+
 (http://127.0.0.1:8000/TIENDA/)
+
 (http://127.0.0.1:8000/TIENDA/about/)
+
 (http://127.0.0.1:8000/TIENDA/products/)
+
 (http://127.0.0.1:8000/TIENDA/store/)
 
 
@@ -32,6 +36,7 @@ Utilizar la rama main
 ### ACCEDER AL ADMIN  :old_key:
 
 **username**: milagros
+
 **password**: 123456789
 
 
@@ -48,7 +53,9 @@ Milagros Arraras, aprendiz de Python.
 El proyecto consiste en una base de datos de un comercio donde tiene:
 
 **-Clientes**
+
 **-Productos**
+
 **-Categorías**
 
 En **Clientes** se puede ingresar los datos de los nuevos usuarios que se quieran adherir a nuestra página y los mismos se pueden visualizar ahi mismo, luego de haberse registrado.
