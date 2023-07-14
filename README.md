@@ -1,4 +1,4 @@
-# CODERHOUSE - PYTHON - TercerEntrega #
+# CODERHOUSE - PYTHON - TercerEntrega - Arraras Milagros #
 
 ## PROYECTO: ONLINE CLOTHING STORE :shopping:
 
@@ -74,13 +74,13 @@ Luego nos dará una urls con nuestra página web donde veremos una lo que contie
 
 
 
-🔗Dependencias Externas:
+### 🔗Dependencias Externas ###
 
-Visual Studio Code
+**Visual Studio Code**
 
-Django
+**Django**
 
-Bootstrap
+**Bootstrap**
 
 
 
