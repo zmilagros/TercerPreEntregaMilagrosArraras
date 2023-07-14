@@ -1,8 +1,9 @@
 # CODERHOUSE - PYTHON - TercerEntrega #
 
-## PROYECTO: ONLINE CLOTHING STORE ## :shopping:
+## PROYECTO: ONLINE CLOTHING STORE :shopping:
 
 ### INDICE ###
+
 -Notas
 -Enlace página
 -Acceder al admin
@@ -22,7 +23,7 @@ Utilizar la rama main
 (http://127.0.0.1:8000/TIENDA/store/)
 
 
-### ACCEDER AL ADMIN ### :old_key:
+### ACCEDER AL ADMIN  :old_key:
 
 **username**: milagros
 **password**: 123456789
@@ -51,7 +52,7 @@ La página está orientada en este caso a comercios femeninos, pero al ser pensa
 
 
 
-### FLUJO ### :triangular_flag_on_post:
+### FLUJO  :triangular_flag_on_post:
 
 Para iniciar nuestro código hay que ejecutar dentro de la carpeta project **python manage.py runserver**
 
