@@ -16,15 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from TIENDA.views import *
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('TIENDA/', include("TIENDA.urls")),
-    path('', inicioTienda),
-    path('about/', clientes),
-    path('products/', productos),
-    path('store/', categorias)
+    path('', include("TIENDA.urls")),
 ]
 
