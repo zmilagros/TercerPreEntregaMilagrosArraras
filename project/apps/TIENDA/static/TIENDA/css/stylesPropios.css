@@ -1,0 +1,123 @@
+body {
+    background-image: url("../assets/img/fondo2.jpeg");
+}
+
+/* Modificaciones del INDEX */
+
+.Bienvenida_index {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(254, 139, 208);
+    margin-top: 1rem;
+    margin-bottom: 1rem ;
+   /*  background-color: rgba(250, 235, 215, 0.608) ; */
+    box-sizing:inherit;
+}
+
+
+.Bienvenida_index2{
+    background-color: rgba(250, 235, 215, 0.608);
+    color: rgb(52, 83, 65);
+    font-size: 5rem;
+    font-weight: 200;
+    line-height: 4rem;
+}
+
+.cta {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: rgba(52, 83, 65, 0.579);
+  }
+
+
+.bg-faded {
+    background-color: #f6e1c5;
+  }
+
+/* modificaciones en Clientes */
+
+.form_clientes{
+    box-sizing: border-box;
+    width: 330px;
+    height: 140px;
+    background-color:rgb(52, 83, 65);
+    padding-left: 2rem ;
+    border-radius:1%;
+    margin-left: 30rem;
+    /* a futuro corregir ubicacion cambiando los margenes (margin-left= 30 rem) esta feo feo */
+
+}
+
+.tabla-clientes{
+    display: block;
+    color: antiquewhite;
+}
+
+.tabla-agregar{
+    margin-top: 0.5rem;
+}
+
+.div-de-clientes{
+    padding: 3rem;
+    margin-left: 9rem;
+}
+
+.tabla-general{
+    background-color: rgba(1, 3, 1, 0.808);
+    margin-left: 30rem;
+    /* a futuro corregir ubicacion cambiando los margenes (margin-left= 30 rem) esta feo feo */
+}
+
+.tabla-ID{
+    color: antiquewhite;
+    padding-left: 1rem;
+    padding-right:2rem;
+    padding-top: 0.4rem;
+}
+
+.tabla-nombre{
+    color: antiquewhite;
+    padding-right:2rem;
+    padding-top: 0.4rem;
+}
+
+.tabla-apellido{
+    color: antiquewhite;
+    padding-right:2rem;
+    padding-top: 0.4rem;
+}
+
+.tabla-email{
+    color: antiquewhite;
+    padding-right:1.9rem;
+    padding-top: 0.4rem;
+}
+
+.cliente-comentario{
+    text-align: center;
+}
+
+/* Modificaciones en el products */
+
+.product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    max-width: 50vw;
+  }
+
+.instagram{
+    margin-top: 3rem;
+}
+
+.tabla-precio{
+    color: antiquewhite;
+    padding-right:1.8rem;
+    padding-top: 0.4rem;
+}
+
+
+
+
+
