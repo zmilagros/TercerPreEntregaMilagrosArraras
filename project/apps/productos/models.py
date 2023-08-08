@@ -7,4 +7,3 @@ class Producto(models.Model):
 
     def __str__(self):
         return f" Descripción: {self.descripcion} - Talle: {self.talle} - Precio: {self.precio}"
-    

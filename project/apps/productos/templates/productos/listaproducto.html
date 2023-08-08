@@ -1,0 +1,28 @@
+{% extends 'productos/products.html' %}
+
+{% block INDEX_TITULO %} 
+    Detalles del Producto
+{% endblock INDEX_TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    {% if object_list %}
+
+        {% for object in object_list %}
+            <ul>
+                <li>{{ object.nombre }}
+                    <a href="{% url 'producto:detalleproducto' object.id %}">Ver detalle</a>
+                    <a href="{% url 'producto:crearproducto' object.id %}">Actualizar</a>
+                    <a href="{% url 'producto:eliminarproducto' object.id %}">Eliminar</a>
+                </li>
+            </ul>
+        {% endfor %}        
+    {% else %}
+        <p>no hay elementos</p>
+
+    {% endif %}
+
+
+    <a href="{% url 'productos' %}" class="btn btn-primary">
+        Regresar a productos
+    </a>
+{% endblock INDEX_CONTENIDO %}

@@ -1,6 +1,7 @@
 from django import forms
+from .models import Producto
 
-class ProductoForm(forms.Form):
-    descripcion=forms.CharField(max_length=50)
-    talle=forms.CharField(max_length=50)
-    precio=forms.FloatField()
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ['descripcion', 'talle', 'precio']

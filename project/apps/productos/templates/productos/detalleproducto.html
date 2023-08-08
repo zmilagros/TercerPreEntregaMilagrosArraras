@@ -1,0 +1,19 @@
+{% extends 'productos/products.html' %}
+
+{% block INDEX_TITULO %} 
+    Detalles del Producto
+{% endblock INDEX_TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    
+    <ul>
+        <li>Descripción: {{ object.descripcion }}</li>
+        <li>Talle: {{ object.talle }}</li>
+        <li>Precio: {{ object.precio }}</li>
+    </ul>
+
+
+    <a href="{% url 'productos' %}" class="btn btn-primary">
+        Regresar a productos
+    </a>
+{% endblock INDEX_CONTENIDO %}
