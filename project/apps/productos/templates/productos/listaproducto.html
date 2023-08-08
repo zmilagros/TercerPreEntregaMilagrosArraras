@@ -1,5 +1,5 @@
 {% extends 'productos/products.html' %}
-
+AAAA
 {% block INDEX_TITULO %} 
     Detalles del Producto
 {% endblock INDEX_TITULO %}
@@ -10,9 +10,9 @@
         {% for object in object_list %}
             <ul>
                 <li>{{ object.nombre }}
-                    <a href="{% url 'producto:detalleproducto' object.id %}">Ver detalle</a>
-                    <a href="{% url 'producto:crearproducto' object.id %}">Actualizar</a>
-                    <a href="{% url 'producto:eliminarproducto' object.id %}">Eliminar</a>
+                    <a href="{% url 'productos:detalle_producto' object.id %}">Ver detalle</a>
+                    <a href="{% url 'productos:crear_producto' object.id %}">Actualizar</a>
+                    <a href="{% url 'productos:eliminar_producto' object.id %}">Eliminar</a>
                 </li>
             </ul>
         {% endfor %}        

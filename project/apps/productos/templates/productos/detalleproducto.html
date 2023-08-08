@@ -1,12 +1,12 @@
 {% extends 'productos/products.html' %}
 
 {% block INDEX_TITULO %} 
-    Detalles del Producto
+    <h1 style="color:white">Detalles del Producto</h1>
 {% endblock INDEX_TITULO %}
 
 {% block INDEX_CONTENIDO %}
     
-    <ul>
+    <ul style="color:white">
         <li>Descripción: {{ object.descripcion }}</li>
         <li>Talle: {{ object.talle }}</li>
         <li>Precio: {{ object.precio }}</li>

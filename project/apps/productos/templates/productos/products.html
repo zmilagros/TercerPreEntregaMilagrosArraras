@@ -26,17 +26,21 @@
                 <span class="Bienvenida_index site-heading-upper ">en stock</span>
             </h1>
         </header>
-        
+        {% block INDEX_TITULO %} 
+        <!-- Deja el bloque INDEX_TITULO abierto para que pueda ser extendido en el template hijo -->
+        {% endblock INDEX_TITULO %}
+    
+        {% block INDEX_CONTENIDO %}
+        <!-- Deja el bloque INDEX_CONTENIDO abierto para que pueda ser extendido en el template hijo -->
+        {% endblock INDEX_CONTENIDO %}
         {% block content %}
-        <form class= "form_clientes" action="" method="post">
-            {% csrf_token %}
-            <table class="tabla-clientes">
-            {{ form.as_table }}
-            </table>
-            <input class="tabla-agregar" type="submit" value="Agregar">
+          <section class="Create_products">
+            <a href="{% url "productos:lista_productos" %}">Lista Productos</a>
+            <a href="{% url 'productos:crear_producto' %}">Crear Productos</a>            
+          </section>  
             
-            </form>
-            
+
+
             <table class="tabla-general">
                 <thead>
                     <tr>
@@ -63,17 +67,19 @@
                         <td class="tabla-precio">
                             {{ producto.precio }}
                         </td>
+                        <td>
+                            <a href="{% url 'productos:detalle_producto' producto.id %}">Ver detalle</a>
+                            <a href="{% url 'productos:editar_producto' producto.id %}">Actualizar</a>
+                            <a href="{% url 'productos:eliminar_producto' producto.id %}">Eliminar</a>
+                        </td>
                         
             
                     {% endfor %}
                 </tbody>
             </table>
 
-        <a href="{% url 'producto:crearproducto' %}">Crear Productos</a>
-        <br>
-        <a href="{% url 'producto:listaproducto' %}">Lista Productos</a>
-        <br>
-        </a>
+            
+            
 
 
             {% endblock %}
@@ -133,6 +139,7 @@
                 </div>
             </div>
         </section>
+ 
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
         </footer>

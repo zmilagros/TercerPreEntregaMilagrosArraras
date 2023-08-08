@@ -41,12 +41,17 @@ body {
     box-sizing: border-box;
     width: 330px;
     height: 140px;
-    background-color:rgb(52, 83, 65);
     padding-left: 2rem ;
     border-radius:1%;
     margin-left: 30rem;
     /* a futuro corregir ubicacion cambiando los margenes (margin-left= 30 rem) esta feo feo */
+    /* Clase sin nada, se borro el form directamente */
 
+}
+
+.Create_products{
+    display: flex;
+    background-color: red;
 }
 
 .tabla-clientes{
