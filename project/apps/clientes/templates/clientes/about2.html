@@ -1,0 +1,72 @@
+{% extends 'clientes/about.html' %}
+
+
+{% block content %}
+
+<h1 class="mt-4"> Lista de Clientes </h1>
+
+<form class= "form_clientes" action="" method="post">
+    {% csrf_token %}
+    <table class="tabla-clientes">
+    {{ form.as_table }}
+    </table>
+    <input class="tabla-agregar" type="submit" value="Agregar">
+    
+    </form>
+    
+    <table class="tabla-general">
+        <thead>
+            <tr>
+                <th class="tabla-ID">ID</th>
+                <th class="tabla-nombre">Nombre</th>
+                <th class="tabla-apellido">Apellido</th>
+                <th class="tabla-email">Email</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for cliente in clientes %}
+            <tr>
+                <td class="tabla-ID">
+                    {{ cliente.id }}
+                </td>
+                <td class="tabla-nombre">
+                    {{ cliente.nombre }}
+                </td>
+                <td class="tabla-apellido">
+                    {{ cliente.apellido }}
+                </td>
+                <td class="tabla-email">
+                    {{ cliente.email }}
+                </td>
+                
+            </tr>
+    
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% endblock %}
+<section class="page-section about-heading">
+    <div class="div-de-clientes" class="container ">
+        <!-- <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/about.jpg" alt="..." /> -->
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="cliente-comentario section-heading-lower">Nuestro Cliente</span>
+                        </h2>
+                        <p>En esta sección podrá ser parte de nuestros clientes y recibirá promociones y descuentos de la tienda a su email.</p>
+                        <p class="mb-0">
+                            Deberá completar sus datos en la parte superior y si el
+                            <em>registro fue exitoso,</em>
+                            se verá en la lista debajo del formulario!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
