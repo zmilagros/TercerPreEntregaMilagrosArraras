@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from productos import *
 from django.http import HttpResponseServerError
 from django.contrib import messages
-
+from django.urls import reverse_lazy
 # importo el paquete os para manejar nombres de archivo
 import os
 
@@ -47,7 +47,7 @@ def registrar_usuario(request):
             formulario.save()
             user = authenticate(username=data["username"], password=data["password1"])
             login(request, user)
-            return redirect("productos: lista_productos")
+            return redirect("productos:lista_productos")
         else:
             return render(request, "clientes/registrar_usuario.html", {"form": formulario, "errors": errors})
 
@@ -62,7 +62,7 @@ def about(request):
     return render(request, "clientes/about.html", context)
 
 
-@login_required
+@login_required(login_url=reverse_lazy('clientes:usuarios-login')) 
 def editar_usuario(request):
     usuario = request.user
     if request.method == "POST":
@@ -94,7 +94,8 @@ def avatar_usuario(usuario_activo):
     return imagen_url
 
 
-@method_decorator(login_required, name='dispatch')
+
+@method_decorator(login_required(login_url=reverse_lazy('clientes:usuarios-login')), name='dispatch')
 class AvatarUploadView(View):
     template_name = 'clientes/avatar_upload.html'
 

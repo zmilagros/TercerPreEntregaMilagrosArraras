@@ -21,9 +21,16 @@
 </section>
     
 <section class="login_section">
-    <p class="login_texto"> No estás registrado?         <button class="login_button"><a class="login__a" href="{% url 'clientes:usuarios-registrar' %}"> Registrate! </a></p></button>
+    <p class="login_texto"> No estás registrado?    <button class="login_button"><a class="login__a" href="{% url 'clientes:usuarios-registrar' %}"> Registrate! </a></p></button>
 
 </section>
 
+ <a href="{% url 'clientes:usuarios-editar' %}" class="btn btn-primary">
+    {% if user.is_authenticated %}
+        Editar Usuario
+    {% else %}
+        Editar Usuario
+    {% endif %}
+ </a>
 
 {% endblock %}
