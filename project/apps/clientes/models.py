@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import get_user_model
 from productos.models import Producto
 
 class CustomUser(AbstractUser):
@@ -17,8 +18,9 @@ class CustomUser(AbstractUser):
         return self.username
 
 class Avatar(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to='avatares', null=True, blank=True, default="/default.jpeg")
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
+    imagen = models.ImageField(
+    upload_to='avatares', null=True, blank=True, default="/default.jpeg")
 
 class Mensajes(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

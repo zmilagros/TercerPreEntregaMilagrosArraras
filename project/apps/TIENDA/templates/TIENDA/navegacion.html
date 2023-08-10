@@ -12,11 +12,9 @@
                 {% if request.user.is_authenticated %}
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="{% url 'clientes' %}" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% with avatar_url=avatar_usuario(request.user) %}
-                            {% if avatar_url %}
-                                <img src="{{ avatar_url }}" alt="Avatar del usuario" class="user-avatar">
-                            {% endif %}
-                        {% endwith %}
+                        {%if request.user.avatar %}
+                            <img style="width: 30px; height: 30px;" src="{{ request.user.avatar.imagen.url }}" alt="Avatar del usuario" class="user-avatar">
+                        {% endif %}
                     </a>
                   
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
