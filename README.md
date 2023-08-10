@@ -1,4 +1,4 @@
-# CODERHOUSE - PYTHON - TercerEntrega - Arraras Milagros #
+# CODERHOUSE - PYTHON - Proyecto Final- Arraras Milagros #
 
 ## PROYECTO: ONLINE CLOTHING STORE :shopping:
 
