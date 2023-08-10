@@ -35,11 +35,12 @@
         {% endblock INDEX_CONTENIDO %}
         {% block content %}
           <section class="Create_products">
-            <li class="list__product">
-                <button class="button__product1"><a class="products__link__a" href="{% url "productos:lista_productos" %}">Lista Productos</a></button>
-                <button class="button__product1"><a class="products__link__a2" href="{% url 'productos:crear_producto' %}">Crear Productos</a> </button>
-            </li>
-                       
+            {% if request.user.is_authenticated %}
+                <li class="list__product">
+
+                    <button class="button__product1"><a class="products__link__a2" href="{% url 'productos:crear_producto' %}">Crear Productos</a> </button>
+                </li>
+            {% endif %}
           </section>  
             
 
@@ -70,11 +71,13 @@
                         <td class="tabla-precio">
                             {{ producto.precio }}
                         </td>
-                        <td>
-                            <a href="{% url 'productos:detalle_producto' producto.id %}">Ver detalle</a>
-                            <a href="{% url 'productos:editar_producto' producto.id %}">Actualizar</a>
-                            <a href="{% url 'productos:eliminar_producto' producto.id %}">Eliminar</a>
-                        </td>
+                        {% if request.user.is_authenticated %}
+                            <td>
+                                <a href="{% url 'productos:detalle_producto' producto.id %}">Ver detalle</a>
+                                <a href="{% url 'productos:editar_producto' producto.id %}">Actualizar</a>
+                                <a href="{% url 'productos:eliminar_producto' producto.id %}">Eliminar</a>
+                            </td>
+                        {% endif %}
                         
             
                     {% endfor %}

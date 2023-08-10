@@ -15,12 +15,16 @@ class UserRegisterForm(UserCreationForm):
         fields = ["username", "first_name", "last_name", "email", "password1", "password2"]
         help_texts = { "email": _("Indica un correo electrónico que uses habitualmente"), "first_name": "", "last_name": "", "password1": ""}
 
+
 class UserEditForm(UserChangeForm):
     first_name = forms.CharField(label=_("Nombre"))
     last_name = forms.CharField(label=_("Apellido"))
     email = forms.EmailField(label=_("Correo electrónico"))
+    password1 = forms.CharField(label=_("Contraseña"), widget=forms.PasswordInput, required=False)
+    password2 = forms.CharField(label=_("Confirme contraseña"), widget=forms.PasswordInput, required=False)
 
     class Meta:
         model = CustomUser
-        fields = ["first_name", "last_name", "email"]
+        fields = ["first_name", "last_name", "email", "password1", "password2"]
         help_texts = { "email": _("Indica un correo electrónico que uses habitualmente"), "first_name": "", "last_name": ""}
+

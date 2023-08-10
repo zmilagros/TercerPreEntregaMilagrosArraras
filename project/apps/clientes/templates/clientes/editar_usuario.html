@@ -1,8 +1,9 @@
 {% extends 'clientes/about.html' %}
 
 {% block contenido %}
-<section>
-<h1 class="mt-4"> Modificar datos de usuario </h1>
+
+<h1 class=" mt-4"> Modificar datos de usuario </h1>
+<section class="editar__usuario__section">
 
 {% if errors %}
     <p>Errores registro de usuario: {{errors}}</p>
@@ -11,11 +12,41 @@
 <form method="post">
     {% csrf_token %}
 
-    {{form.as_p}}
+    <div class="form-group">
+        <label for="{{ form.first_name.id_for_label }}">Nombre</label>
+        {{ form.first_name }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.last_name.id_for_label }}">Apellido</label>
+        {{ form.last_name }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Correo electrónico</label>
+        {{ form.email }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">Contraseña</label>
+        {{ form.password1 }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">Confirme contraseña</label>
+        {{ form.password2 }}
+    </div>
 
     <input type="submit" value="Guardar Modificaciones">
 </form>
 </section>
 
-{% endblock %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
+{% endblock %}

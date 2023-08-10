@@ -3,7 +3,7 @@ from .views import inicioTienda, categorias
 from clientes.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from productos.views import ProductoList
-from clientes.views import iniciar_sesion  
+from clientes.views import iniciar_sesion
 
 urlpatterns = [
     path('', inicioTienda, name="inicioTienda"),
