@@ -25,12 +25,4 @@
 
 </section>
 
- <a href="{% url 'clientes:usuarios-editar' %}" class="btn btn-primary">
-    {% if user.is_authenticated %}
-        Editar Usuario
-    {% else %}
-        Editar Usuario
-    {% endif %}
- </a>
-
 {% endblock %}
