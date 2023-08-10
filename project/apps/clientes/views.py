@@ -62,36 +62,31 @@ def about(request):
     return render(request, "clientes/about.html", context)
 
 
+
 @login_required(login_url=reverse_lazy('clientes:usuarios-login')) 
 def editar_usuario(request):
     usuario = request.user
     if request.method == "POST":
-        formulario = UserEditForm(request.POST)
+        formulario = UserEditForm(request.POST, instance=usuario)
 
         if formulario.is_valid():
             data = formulario.cleaned_data
             usuario.first_name = data["first_name"]
             usuario.last_name = data["last_name"]
             usuario.email = data["email"]
+            if data["password1"]:  # Verifica si se proporcionó una nueva contraseña
+                usuario.set_password(data["password1"])
             usuario.save()
+            messages.success(request, 'Cambios guardados exitosamente.')
+            return redirect("clientes:usuarios-login")
+        else:
+            messages.error(request, 'Error al guardar los cambios. Por favor, corrige los errores.')
 
-            return redirect("productos-inicio")
     else:
-        formulario = UserEditForm(initial={"first_name": usuario.first_name, "last_name": usuario.last_name, "email": usuario.email})
+        formulario = UserEditForm(instance=usuario)
 
     return render(request, "clientes/editar_usuario.html", {"form": formulario, "usuario": usuario})
 
-
-def avatar_usuario(usuario_activo):
-    if usuario_activo.is_authenticated:
-        if Avatar.objects.filter(user=usuario_activo.id).exists():
-            imagen_model = Avatar.objects.get(user=usuario_activo.id)
-            imagen_url = imagen_model.imagen.url
-        else:
-            imagen_url = ""
-    else:
-        imagen_url = ""
-    return imagen_url
 
 
 
@@ -120,5 +115,23 @@ class AvatarUploadView(View):
         return render(request, self.template_name, {'avatar': avatar})
 
 
+def avatar_usuario(usuario_activo):
+    if usuario_activo.is_authenticated:
+        if Avatar.objects.filter(user=usuario_activo.id).exists():
+            imagen_model = Avatar.objects.get(user=usuario_activo.id)
+            imagen_url = imagen_model.imagen.url
+        else:
+            imagen_url = ""
+    else:
+        imagen_url = ""
+    return imagen_url
 
+@login_required(login_url=reverse_lazy('clientes:usuarios-login'))
+def mostrar_navbar(request):
+    usuario_activo = request.user
+    avatar_url = avatar_usuario(usuario_activo)
 
+    context = {
+        'avatar_url': avatar_url
+    }
+    return render(request, 'clientes/navbar.html', context)

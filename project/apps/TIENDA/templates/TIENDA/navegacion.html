@@ -7,21 +7,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'inicioTienda' %}">Home</a></li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'categorias' %}">Categorías</a></li>
-                {% endif %}
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'clientes' %}">Clientes</a></li>
-
                 {% if request.user.is_authenticated %}
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="{% url 'clientes' %}" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>                   </a>
+                    <a class="btn btn-secondary dropdown-toggle" href="{% url 'clientes' %}" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% with avatar_url=avatar_usuario(request.user) %}
+                            {% if avatar_url %}
+                                <img src="{{ avatar_url }}" alt="Avatar del usuario" class="user-avatar">
+                            {% endif %}
+                        {% endwith %}
+                    </a>
                   
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" href="{% url 'clientes:usuarios-editar' %}">Editar Usuario</a></li>
-                      <li><a class="dropdown-item" href="{% url 'clientes:cargar_avatar' %}">Cargar Avatar</a></li>
-                      <li><a class="dropdown-item" href="{% url 'clientes:usuarios-logout' %}">Logout</a></li>
+                        <li><a class="dropdown-item" href="{% url 'clientes:usuarios-editar' %}">Editar Usuario</a></li>
+                        <li><a class="dropdown-item" href="{% url 'clientes:cargar_avatar' %}">Cargar Avatar</a></li>
+                        <li><a class="dropdown-item" href="{% url 'clientes:usuarios-logout' %}">Logout</a></li>
                     </ul>
-                  </div>
+                </div>
                 {% endif %}
             </ul>
         </div>
