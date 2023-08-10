@@ -1,19 +1,25 @@
 {% extends 'productos/products.html' %}
 
-{% block INDEX_TITULO %} 
-    Crear/Actualizar Productos
-{% endblock INDEX_TITULO %}
+    {% block INDEX_TITULO %} 
+    <section class="section__crear__product">
+        <h2>Crear/Actualizar Productos</h2>
+    </section>
+    {% endblock INDEX_TITULO %}
+
+
+
 
 {% block INDEX_CONTENIDO %}
     
-    <form method="post">
+    <form class="form__crear__product" method="post">
         {% csrf_token %}
         {{ form.as_p}}
         <button type="submit">Guardar</button>
     </form>
 
-
-    <a href="{% url 'productos' %}" class="btn btn-primary">
-        Regresar a productos
-    </a>
+    <section class="regresar__section__product">
+        <a href="{% url 'productos' %}" class="button__product">
+            Regresar a productos
+        </a>
+    </section>
 {% endblock INDEX_CONTENIDO %}

@@ -50,10 +50,16 @@
                                 </tr>
                               {% endfor %}
                             </table>
-                        </div>
-                <a href="{% url 'productos' %}" class="btn btn-primary">
-                    Ver stock de productos
-                </a>
+                        </div>
+
+                        <a href="{% url 'productos' %}" class="btn btn-primary">
+                            {% if user.is_authenticated %}
+                                Ver stock de productos
+                            {% else %}
+                                Iniciar sesión para ver el stock
+                            {% endif %}
+                        </a>
+
                         <p class="instagram address mb-5">
                             <em>
                                 <strong> @athenia_cba </strong>

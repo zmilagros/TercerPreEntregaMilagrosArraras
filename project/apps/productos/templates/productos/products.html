@@ -35,8 +35,11 @@
         {% endblock INDEX_CONTENIDO %}
         {% block content %}
           <section class="Create_products">
-            <a href="{% url "productos:lista_productos" %}">Lista Productos</a>
-            <a href="{% url 'productos:crear_producto' %}">Crear Productos</a>            
+            <li class="list__product">
+                <button class="button__product1"><a class="products__link__a" href="{% url "productos:lista_productos" %}">Lista Productos</a></button>
+                <button class="button__product1"><a class="products__link__a2" href="{% url 'productos:crear_producto' %}">Crear Productos</a> </button>
+            </li>
+                       
           </section>  
             
 

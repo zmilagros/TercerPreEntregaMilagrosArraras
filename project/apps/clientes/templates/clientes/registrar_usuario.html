@@ -2,20 +2,26 @@
 
 {% block contenido %}
 
-<h1 class="mt-4"> Registrar nuevo usuario </h1>
+<h1 class=" titulo__registrar mt-4"> Registrar nuevo usuario </h1>
 
-{% if errors %}
-    <p>Errores registro de usuario: {{errors}}</p>
-{% endif %}
+<section class="section__registrar__usuario">
+    
 
-<form method="post">
-    {% csrf_token %}
+        {% if errors %}
+            <p>Errores registro de usuario: {{errors}}</p>
+        {% endif %}
 
-    {{form.as_p}}
+    <form method="post">
+        {% csrf_token %}
 
-    <input type="submit" value="Registrar Usuario">
-</form>
-<p> </p>
-<p> Ya tenés una cuenta?? <a href="{% url 'usuarios-login' %}"> Iniciá sesión </a></p>
+        {{form.as_p}}
+
+        <input type="submit" value="Registrar Usuario">
+    </form>
+    <p> </p>
+    
+
+</section>
+<p class="titulo__registrar1"> ¿Ya tenés una cuenta? <button class="login_button"><a class="login__a" href="{% url 'clientes:usuarios-login' %}"> Iniciá sesión </a></button></p>
 
 {% endblock %}

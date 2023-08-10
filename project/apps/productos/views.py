@@ -9,11 +9,11 @@ from django.views.generic import (
     ListView,
     UpdateView,
 )
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from . import forms, models
 
 
-class ProductoList(ListView):
+class ProductoList(LoginRequiredMixin, ListView):
     model = Producto
     template_name = "productos/products.html"
     context_object_name = "productos"

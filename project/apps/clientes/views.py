@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from clientes.forms import UserRegisterForm, UserEditForm
 from clientes.models import *
 from django.contrib.auth.decorators import login_required
+from productos import *
 
 # importo el paquete os para manejar nombres de archivo
 import os
@@ -25,7 +26,7 @@ def iniciar_sesion(request):
 
             if user is not None:
                 login(request, user)
-                return redirect("productos-inicio")  # Redirigir a la página de inicio de la TIENDA
+                return redirect("productos:lista_productos")  # Redirigir a la página de inicio de la TIENDA
             else:
                 return render(request, "clientes/login.html", {"form": formulario, "errors": "Credenciales no válidas"})
         else:
@@ -43,7 +44,7 @@ def registrar_usuario(request):
             formulario.save()
             user = authenticate(username=data["username"], password=data["password1"])
             login(request, user)
-            return redirect("productos-inicio")
+            return redirect("productos: lista_productos")
         else:
             return render(request, "clientes/registrar_usuario.html", {"form": formulario, "errors": errors})
 
@@ -56,12 +57,6 @@ def about(request):
     usuarios = usuarios.objects.all() 
     context = {"usuarios": usuarios}
     return render(request, "clientes/about.html", context)
-
-@login_required
-def about2(request):
-    usuarios = usuarios.objects.all() 
-    context = {"usuarios": usuarios}
-    return render(request, "clientes/about2.html", context)
 
 
 @login_required
