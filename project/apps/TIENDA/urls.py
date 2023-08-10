@@ -9,8 +9,6 @@ urlpatterns = [
     path('', inicioTienda, name="inicioTienda"),
     path('clientes/', iniciar_sesion, name='clientes'),
     path('products/', ProductoList.as_view(), name='productos'),
-    path('products/', include('productos.urls'), name='productos'),
-    path('clientes/', include('clientes.urls')),
     path('store/', categorias, name='categorias'),
 ]
 

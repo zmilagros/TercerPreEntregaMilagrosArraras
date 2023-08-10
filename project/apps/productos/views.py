@@ -12,12 +12,15 @@ from django.views.generic import (
 from .models import Producto
 from .forms import ProductoForm
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(login_required(login_url=reverse_lazy('usuarios-login')), name='dispatch')
 class ProductoList(ListView):
     model = Producto
     template_name = "productos/products.html"
     context_object_name = "productos"
-    form_class = ProductoForm
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -25,17 +28,22 @@ class ProductoList(ListView):
         return context
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
+        form = ProductoForm(request.POST)
         if form.is_valid():
-            form.save()
-            form = self.form_class()
+            producto = Producto(
+                descripcion=form.cleaned_data['descripcion'],
+                talle=form.cleaned_data['talle'],
+                precio=form.cleaned_data['precio']
+            )
+            producto.save()
+            form = ProductoForm()
         else:
-            form = self.form_class()
+            form = ProductoForm()
 
         productos = self.model.objects.all()
         context = {"productos": productos, "form": form}
         return self.render_to_response(context)
-
+    
 class ProductoCreate(CreateView):
     model = Producto
     form_class = ProductoForm
