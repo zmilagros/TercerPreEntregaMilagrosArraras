@@ -1,4 +1,4 @@
-# CODERHOUSE - PYTHON - TercerEntrega - Arraras Milagros #
+# CODERHOUSE - PYTHON - Proyecto Final- Arraras Milagros #
 
 ## PROYECTO: ONLINE CLOTHING STORE :shopping:
 
@@ -16,7 +16,6 @@
 
 ### NOTAS ###
 Utilizar la rama main
-
 
 
 ### ENLACE PÁGINA ###
@@ -47,7 +46,6 @@ Milagros Arraras, aprendiz de Python.
 
 
 
-
 ### SOBRE EL PROYECTO ###
 
 El proyecto consiste en una base de datos de un comercio donde tiene:
@@ -65,7 +63,7 @@ En **Clientes** permitimos al personal que se cree un usuario para poder adminis
 En **Categorías** encontramos los tipos de prendas separadas por secciones como parte superior; remeras y tops; parte inferior; pantalones y faldas; segundapiel; abrigos. Debajo de esa introducción a los **Productos** disponibles, debemos ingresar a el botón Iniciar sesión para ver stock de productos y luego desde allí el personal podrá editarlos según haya stock de los mismos. Entre las opiones podrá Editar, Eliminar, Agregar y Ver Detalles de los productos.
 
 
-La página está orientada en este caso a comercios femeninos, pero al ser pensada como una base para vender a tiendas de ropa en un futuro, fue creada para ser flexible en caso de reutilizar el proyecto para otro comercio. 
+La página está orientada en este caso a comercios femeninos, pero al ser pensada como una base para vender a tiendas de ropa en un futuro, fue creada para ser flexible en caso de reutilizar el proyecto para otro comercio. Pero con mis conocimientos logré crear una tienda donde el admin puede editar los productos en stock inciando sesión. 
 
 
 
