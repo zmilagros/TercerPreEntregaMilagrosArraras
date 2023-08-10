@@ -12,7 +12,7 @@ from django.views.generic import (
 from .models import Producto
 from .forms import ProductoForm
 
-@method_decorator(login_required(login_url=reverse_lazy('usuarios-login')), name='dispatch')
+
 class ProductoList(ListView):
     model = Producto
     template_name = "productos/products.html"
@@ -43,23 +43,31 @@ class ProductoList(ListView):
         productos = self.model.objects.all()
         context = {"productos": productos, "form": form}
         return self.render_to_response(context)
-    
+
+
+@method_decorator(login_required(login_url=reverse_lazy('clientes:usuarios-login')), name='dispatch')    
 class ProductoCreate(CreateView):
     model = Producto
     form_class = ProductoForm
     template_name = "productos/crearproducto.html"
     success_url = reverse_lazy("productos:lista_productos")
 
+
+
 class ProductoDetail(DetailView):
     template_name = "productos/detalleproducto.html"
     model = Producto
 
+
+@method_decorator(login_required(login_url=reverse_lazy('clientes:usuarios-login')), name='dispatch')
 class ProductoUpdate(UpdateView):
     model = Producto
     form_class = ProductoForm
     template_name = "productos/crearproducto.html"
     success_url = reverse_lazy("productos:lista_productos")
 
+
+@method_decorator(login_required(login_url=reverse_lazy('clientes:usuarios-login')), name='dispatch')
 class ProductoDelete(DeleteView):
     model = Producto
     template_name = "productos/eliminarproducto.html"
