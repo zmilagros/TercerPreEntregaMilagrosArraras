@@ -291,10 +291,25 @@ body {
 }
 
 /* Modificacioes en el editar usuario */
+.user__title mt-4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
 
 .editar__usuario__section{
     display: flex;
     justify-content: center;   
     align-items: center; 
+    background-color: red;
 }
 
+/* modificaciones en el upload avatar */
+
+.upload_avatar{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
