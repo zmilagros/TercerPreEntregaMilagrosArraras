@@ -9,6 +9,8 @@ from productos import *
 from django.http import HttpResponseServerError
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.contrib.auth.views import LogoutView
+from django.utils import timezone
 # importo el paquete os para manejar nombres de archivo
 import os
 
@@ -135,3 +137,14 @@ def mostrar_navbar(request):
         'avatar_url': avatar_url
     }
     return render(request, 'clientes/navbar.html', context)
+
+
+
+class CustomLogoutView(LogoutView):
+    template_name = 'clientes/logout.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        logout_time = timezone.now().strftime("%Y-%m-%d %H:%M:%S")
+        context['logout_time'] = logout_time
+        return context
