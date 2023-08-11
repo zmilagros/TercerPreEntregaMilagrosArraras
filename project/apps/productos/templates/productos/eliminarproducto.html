@@ -1,19 +1,23 @@
 {% extends 'productos/products.html' %}
 
 {% block INDEX_TITULO %} 
-    Eliminar Productos
+    
+<h2 class="titulo__eliminar">Eliminar Productos</h2>
 {% endblock INDEX_TITULO %}
 
 {% block INDEX_CONTENIDO %}
-
+<section class="eliminar__producto">
     <p class="fs-5 fst-italic">¿Confirma eliminar "{{ object }}"?</p>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Confirmar</button>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirmar</button>
+        </form>
 
-    <a href="{% url 'productos' %}" class="btn btn-primary">
-        Regresar a productos
-    </a>
+        <a href="{% url 'productos' %}" class="btn btn-primary">
+            Regresar a productos
+        </a>
+
+</section>
+   
 {% endblock INDEX_CONTENIDO %}

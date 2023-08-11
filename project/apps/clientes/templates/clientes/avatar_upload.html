@@ -3,6 +3,8 @@
 {% block contenido %}
 
 <h1 class=" upload_avatar mt-4"> Cargar avatar </h1>
+<section class="section__avatar">
+
 
 <!-- {% if messages %}
     <ul class="messages">
@@ -21,5 +23,7 @@
 {% if avatar.imagen %}
     <h3>Avatar actual:</h3>
     <img src="{{ avatar.imagen.url }}" alt="Avatar">
+
+</section>
 {% endif %}
 {% endblock %}

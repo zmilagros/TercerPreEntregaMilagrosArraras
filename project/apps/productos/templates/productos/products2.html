@@ -41,32 +41,31 @@
                     <button class="button__product1"><a class="products__link__a2" href="{% url 'productos:crear_producto' %}">Crear Productos</a> </button>
                 </li>
             {% endif %}
-          </section>  
-            
-          <div class="row">
-            {% for producto in productos %}
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'media/falda.jpg' %}{{ producto.imagen }}" class="card-img-top" alt="{{ producto.descripcion }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ producto.descripcion }}</h5>
-                        <p class="card-text">{{ producto.talle }}</p>
-                        <p class="card-text">${{ producto.precio }}</p>
-                    </div>
-                    {% if request.user.is_authenticated %}
-                    <div class="card-footer">
-                        <a href="{% url 'productos:detalle_producto' producto.pk %}" class="card-link">Ver detalle</a>
-                        <a href="{% url 'productos:editar_producto' producto.pk %}" class="card-link">Actualizar</a>
-                        <a href="{% url 'productos:eliminar_producto' producto.pk %}" class="card-link">Eliminar</a>
-                    </div>
-                    {% endif %}
-                </div>
+          </section> 
+          
+          <div class="card" style="width: 18rem;">
+            <img src="../../../../media/falda.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Falda tableada</h5>
+              <p class="card-text">ABCDEF ingresar texto</p>
             </div>
-            {% endfor %}
-        </div>        
-     {% endblock %}
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ producto.talle }}</li>
+              <li class="list-group-item">{{ producto.descripcion }}</li>
+              <li class="list-group-item">{{ producto.precio }}</li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <div class="card-body">
+              <a href="{% url 'productos:detalle_producto' producto.id %}" class="card-link">Ver detalle</a>
+              <a href="{% url 'productos:editar_producto' producto.id %}" class="card-link">Actualizar</a>
+              <a href="{% url 'productos:eliminar_producto' producto.id %}">Eliminar</a>
+            </div>
+            {% endif %}
+          </div>         
+            
 
 
+            {% endblock %}
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
