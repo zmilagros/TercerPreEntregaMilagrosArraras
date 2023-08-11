@@ -21,3 +21,10 @@ class Avatar(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     imagen = models.ImageField(
     upload_to='avatares', null=True, blank=True, default="/default.jpeg")
+
+class Mensajes(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    articulo = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    mensaje = models.CharField(max_length=300)
+    fecha = models.DateTimeField(auto_now=True)
+

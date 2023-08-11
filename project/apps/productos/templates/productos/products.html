@@ -47,7 +47,9 @@
             {% for producto in productos %}
             <div class="col-md-4 mb-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{producto.imagen.url}}" class="card-img-top" alt="{{ producto.descripcion }}">
+                    {% if producto.imagen %}
+                        <img src="{{producto.imagen.url}}" class="card-img-top" alt="{{ producto.descripcion }}">
+                    {% endif %}    
                     <div class="card-body"> 
                         <h5 class="card-title">{{ producto.descripcion }}</h5>
                         <p class="card-text">{{ producto.talle }}</p>
