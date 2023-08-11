@@ -80,7 +80,7 @@ def editar_usuario(request):
                 usuario.set_password(data["password1"])
             usuario.save()
             messages.success(request, 'Cambios guardados exitosamente.')
-            return redirect("clientes:usuarios-login")
+            return redirect("clientes")
         else:
             messages.error(request, 'Error al guardar los cambios. Por favor, corrige los errores.')
 

@@ -50,7 +50,7 @@ class ProductoCreate(CreateView):
     model = Producto
     form_class = ProductoForm
     template_name = "productos/crearproducto.html"
-    success_url = reverse_lazy("productos:lista_productos")
+    success_url = reverse_lazy("productos")
 
 
 
@@ -64,11 +64,11 @@ class ProductoUpdate(UpdateView):
     model = Producto
     form_class = ProductoForm
     template_name = "productos/crearproducto.html"
-    success_url = reverse_lazy("productos:lista_productos")
+    success_url = reverse_lazy("productos")
 
 
 @method_decorator(login_required(login_url=reverse_lazy('clientes:usuarios-login')), name='dispatch')
 class ProductoDelete(DeleteView):
     model = Producto
     template_name = "productos/eliminarproducto.html"
-    success_url = reverse_lazy("productos:lista_productos")
+    success_url = reverse_lazy("productos")

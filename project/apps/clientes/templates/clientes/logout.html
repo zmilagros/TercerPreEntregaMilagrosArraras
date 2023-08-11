@@ -1,10 +1,15 @@
+
 {% extends 'clientes/about.html' %}
+{% load static %}
+
 
 {% block contenido %}
 <section class="logout__message">
-    <h2> Tu sesión ha cerrado </h2>
+    <h2 class="logout__titulo"> Tu sesión ha cerrado </h2>
     
-    <p> Cerraste sesión el {{ logout_time }}. </p>
+    <p class="logout__parrafo"> Cerraste sesión el {{ logout_time }}. </p>
+    <img class="logout__image" src= "{% static 'TIENDA/assets/img/logout_img2.jfif' %}" />
+
 </section>
 {% endblock %}
 
