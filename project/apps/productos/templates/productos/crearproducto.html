@@ -11,7 +11,7 @@
 
 {% block INDEX_CONTENIDO %}
     
-    <form class="form__crear__product" method="post">
+    <form class="form__crear__product" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p}}
         <button type="submit">Guardar</button>
