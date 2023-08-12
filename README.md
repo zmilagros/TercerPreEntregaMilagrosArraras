@@ -4,14 +4,19 @@
 
 ### INDICE ###
 
+-Video
 -Notas
 -Enlace página
 -Acceder al admin
+-Acceder al cliente
 -Autor
 -Sobre el proyecto
--Flujo
+-Código
 -Extensiones
 
+
+### VIDEO ###
+https://www.loom.com/share/00dd387591344f24b6b362c10849d51a?sid=92bc5fd4-58b4-4d3c-8bc5-5f1896f9e3fb
 
 
 ### NOTAS ###
@@ -22,14 +27,13 @@ Utilizar la rama main
 
 (http://127.0.0.1:8000/admin/)
 
-(http://127.0.0.1:8000/TIENDA/)
+(http://127.0.0.1:8000/)
 
-(http://127.0.0.1:8000/TIENDA/about/)
+(http://127.0.0.1:8000/store/)
 
-(http://127.0.0.1:8000/TIENDA/products/)
+(http://127.0.0.1:8000/products/)
 
-(http://127.0.0.1:8000/TIENDA/store/)
-
+(http://127.0.0.1:8000/clientes/)
 
 
 ### ACCEDER AL ADMIN  :old_key:
@@ -37,6 +41,12 @@ Utilizar la rama main
 **username**: milagros
 
 **password**: 123456789
+
+### USUARIO CLIENTES ###
+
+**username**:zMilagros_a
+
+**password**: Milagros123456789
 
 
 
@@ -67,20 +77,10 @@ La página está orientada en este caso a comercios femeninos, pero al ser pensa
 
 
 
-
-
-### FLUJO  :triangular_flag_on_post:
+### COMANDOS para ejecutar la página web: triangular_flag_on_post:
 
 Para iniciar nuestro código hay que instalar **pip install django**
 Luego, dentro de la carpeta project, ejecutar **python manage.py runserver**
-
-Luego nos dará una urls con nuestra página web donde veremos una lo que contiene TIENDA/index.html que es nuestro inicio/página principal. Podemos navegar a clientes gracias a la urls asociada a TIENDA/about.html que nos mostrá un formulario a completar y visualizaremos nuestros registros debajo. Al lado tenemos a productos dirigida por TIENDA/products.html que contiene un formulario a completar por los vendedores y se ven nuestros productos en stock abajo. Por último tenemos a categorias dirigida por TIENDA/store.html que muestra nuestras categorías explicado en la parte superior. Todas estas secciones logran visualizarse gracias a navegacion.html que heredan los htmls mencionados anteriormente. Esta práctica de navegación funciona por los urls asociados que llegarán a la carpeta config y urls.py.
-
-
-###VIDEO###
-
-https://www.loom.com/share/6e5500c0f6df4b5488f4247725b18978
-
 
 
 ### 🔗Dependencias Externas ###
@@ -90,6 +90,13 @@ https://www.loom.com/share/6e5500c0f6df4b5488f4247725b18978
 **Django**
 
 **Bootstrap**
+
+
+
+### DIAGRAMA ###
+
+![Diagrama](image-1.png)
+
 
 
 
